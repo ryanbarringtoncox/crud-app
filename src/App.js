@@ -1,28 +1,53 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { connect } from 'react-redux';
+import List from './components/List'
+import AddForm from './components/AddForm'
+import EditForm from './components/EditForm'
+import { deletePerson, addPerson, updatePerson, updatePersonToEdit } from './actions/actions';
+import { store } from './index.js'
 import './App.css';
 
 class App extends Component {
+  
+  addPersonHandler = person => {
+    store.dispatch(addPerson(person));
+  }
+
+  deletePersonHandler = id => {
+    store.dispatch(deletePerson(id));
+  }
+
+  editPersonHandler = id => {
+    store.dispatch(updatePersonToEdit(id));
+  }
+
+  updatePersonHandler = person => {
+    store.dispatch(updatePerson(person));
+    // reset person to edit to -1
+    store.dispatch(updatePersonToEdit(-1));
+  }
+
   render() {
+    const { people, personToEditId } = this.props;
+    const personToEditObject = people.find(person => person.id === personToEditId);
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <List people={people} editPersonHandler={this.editPersonHandler} deletePersonHandler={this.deletePersonHandler}/>
+        <hr />
+        <AddForm addPersonHandler={this.addPersonHandler}/>
+        <hr />
+        <EditForm updatePersonHandler={this.updatePersonHandler} person={personToEditObject}/>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  ...state
+});
+
+const mapDispatchToProps = dispatch => ({
+  
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
