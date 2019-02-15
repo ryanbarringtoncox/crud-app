@@ -11,7 +11,6 @@ class AddForm extends Component {
   }
 
   handleSubmit = e => {
-    // Remember to prevent default which reloads page, re-inits state
     e.preventDefault();
     this.props.addPersonHandler(this.state);
     this.setState({

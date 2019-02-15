@@ -17,7 +17,7 @@ class App extends Component {
     store.dispatch(deletePerson(id));
   }
 
-  editPersonHandler = id => {
+  editPersonToEditHandler = id => {
     store.dispatch(updatePersonToEdit(id));
   }
 
@@ -32,7 +32,7 @@ class App extends Component {
     const personToEditObject = people.find(person => person.id === personToEditId);
     return (
       <div className="App">
-        <List people={people} editPersonHandler={this.editPersonHandler} deletePersonHandler={this.deletePersonHandler}/>
+        <List people={people} editPersonToEditHandler={this.editPersonToEditHandler} deletePersonHandler={this.deletePersonHandler}/>
         <hr />
         <AddForm addPersonHandler={this.addPersonHandler}/>
         <hr />

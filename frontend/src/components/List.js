@@ -7,7 +7,7 @@ class List extends Component {
   }
 
   handleEdit = id => {
-    this.props.editPersonHandler(id);
+    this.props.editPersonToEditHandler(id);
   }
 
   render() {
