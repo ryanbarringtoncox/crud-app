@@ -2,7 +2,7 @@
   <ul>
     {% for person in people %}
       <li>
-        <a href="{% crud:url 'get_person' person_id %}">{{ person.name }}</a>
+        <a href="{% url 'get_person' person.id %}">{{ person.name }}</a>
       </li>
     {% endfor %}
   </ul>

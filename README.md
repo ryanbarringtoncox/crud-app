@@ -12,33 +12,28 @@ CRUD stands for:
 
 ### Frontend
 
-````
+Install frontend deps in node_modules dir and run local dev server.
+
+```
 cd frontend/
-npm install
-````
-
-Installs frontend deps in node_modules dir.
-
-` yarn start`
-
-Runs the frontend app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
+yarn start
+```
 ### Backend
 
-Create a virtual python environment and activate it.  venv/ dir already added to gitignore. Install requirements.
+Create a virtual python environment and activate it.  venv/ dir already added to gitignore. Install requirements. Run dev server.
 
 ```
 virtualenv venv
 source  venv/bin/activate
 pip install -r requirements.txt
+cd backend/
+./manage.py runserver
 ```
-
-Install Django.
 
 ### TODOs:
   - integrate react and django templates
   - integrate react and django api/models
+  - unit tests to front and backend
   - style it
   - add client-side validation
   - add server-side validation
