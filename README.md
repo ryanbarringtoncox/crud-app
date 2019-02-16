@@ -16,6 +16,7 @@ Install frontend deps in node_modules dir and run local dev server.
 
 ```
 cd frontend/
+yarn install
 yarn start
 ```
 ### Backend
@@ -40,4 +41,4 @@ cd backend/
   - add clients model in db, with proper associations
   - add clients to frontend, make it useable and easy
   - switch to Django rest API?
-  - look into security
+  - security (fronted and backend)
