@@ -1,13 +1,14 @@
 {% load render_bundle from webpack_loader %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+  </head>
 
-{% render_bundle 'main' %}
-
-{% if people %}
-  <ul>
-    {% for person in people %}
-      <li>
-        <a href="{% url 'get_person' person.id %}">{{ person.name }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-{% endif %}
+  <body>
+    <div id="react-app"></div>
+    <p>test</p>
+    {% render_bundle 'main' %}
+  </body>
+</html>

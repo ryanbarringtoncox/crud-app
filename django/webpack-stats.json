@@ -1,1 +1,1 @@
-{"status":"done","chunks":{"main":[{"name":"main-3619ef0922f1f152d23f.js","path":"/Users/rbc/code/crud-app/django/assets/webpack_bundles/main-3619ef0922f1f152d23f.js"}]}}
+{"status":"done","publicPath":"http://localhost:3000/assets/webpack_bundles/","chunks":{"main":[{"name":"main-0a2d2b3bf56c64efbf77.js","publicPath":"http://localhost:3000/assets/webpack_bundles/main-0a2d2b3bf56c64efbf77.js","path":"/Users/rbc/code/crud-app/django/assets/webpack_bundles/main-0a2d2b3bf56c64efbf77.js"}]}}
