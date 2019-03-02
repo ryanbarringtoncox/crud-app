@@ -21,5 +21,9 @@
     "webpack-bundle-tracker": "^0.4.2-beta",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1"
   }
 }
